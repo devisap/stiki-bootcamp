@@ -1,0 +1,20 @@
+name : Deploy api perpus
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  first:
+    name: Pull from github
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy api perpus
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd ${{ secrets.DIR }}
+          git pull origin main
