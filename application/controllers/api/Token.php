@@ -1,6 +1,6 @@
 <?php
     use chriskacerguis\RestServer\RestController;
-    class Berita extends RestController{
+    class Token extends RestController{
         public function __construct(){
             parent::__construct();
             $this->load->model('TokenModel');
