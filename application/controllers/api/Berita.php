@@ -20,7 +20,7 @@
                 'isi_berita' => $isi
             );
             $this->BeritaModel->insert($arr);
-
+ 
             $notif['title'] = 'Info';
             $notif['message'] = 'Terdapat Berita Baru!';
             $notif['regisIds'] = $this->TokenModel->get()->TOKEN;
