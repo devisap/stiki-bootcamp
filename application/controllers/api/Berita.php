@@ -4,6 +4,8 @@
         public function __construct(){
             parent::__construct();
             $this->load->model('BeritaModel');
+            $this->load->model('TokenModel');
+            $this->load->library('notification');
         }
         public function index_get(){
             $berita = $this->BeritaModel->getAll();
@@ -18,6 +20,11 @@
                 'isi_berita' => $isi
             );
             $this->BeritaModel->insert($arr);
+
+            $notif['title'] = 'Info';
+            $notif['message'] = 'Terdapat Berita Baru!';
+            $notif['regisIds'] = $this->TokenModel->get()->TOKEN;
+            $this->notification->push();
             $this->response(['status' => true, 'message' => 'Data berhasill ditambahkan'], 200);
         }
         public function index_put($id_berita){
