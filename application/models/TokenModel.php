@@ -4,7 +4,7 @@
             $this->db->insert('token', ['TOKEN' => $token]);
         }
         public function get(){
-            $response = $this->db->order_by('created_at', 'desc')->get('token')->row();
+            $response = $this->db->get('token')->result_array();
             return $response;
         }
     }

@@ -23,7 +23,7 @@
  
             $notif['title'] = 'Info';
             $notif['message'] = 'Terdapat Berita Baru!';
-            $notif['regisIds'] = $this->TokenModel->get()->TOKEN;
+            $notif['regisIds'] = $this->TokenModel->get();
             $this->notification->push($notif);
             $this->response(['status' => true, 'message' => 'Data berhasill ditambahkan'], 200);
         }
