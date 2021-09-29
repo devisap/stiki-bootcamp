@@ -23,7 +23,7 @@ class Notification {
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => 'POST',
           CURLOPT_POSTFIELDS =>'{
-          "registration_ids":['.$param['regisIds'].'],
+          "registration_ids":['.$regisIds.'],
           "notification": {
               "title":"'.$param['title'].'",
               "body":"'.$param['message'].'",
