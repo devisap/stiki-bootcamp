@@ -4,6 +4,7 @@ class Notification {
     public function push($param){
         $curl = curl_init();
         $authkey = 'key=AAAAcOn1dgM:APA91bGAKGQR5BmowSlZqgqKe7VUcQrfF7WwgyLehPbmWddgMLvWpI84hjSVnjK4zLb6FFk_7WXexvDyatVAjkToJ_F5jrgMCso1q5wJDvMUdJUgscS0XTNSgXmjZp6DLUQkRN1nBYR2';
+        
         $regisIds = array();
         foreach($param['regisIds'] as $item){
           if($item['TOKEN'] != null){
